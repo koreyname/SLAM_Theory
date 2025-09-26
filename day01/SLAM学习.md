@@ -228,6 +228,9 @@ T\begin{bmatrix}
 1
 \end{bmatrix}
 $$
-在一个三维向量的末尾添加 1, 将其变成了四维向量, 称为齐次坐 标。对于这个四维向量, 我们可以把旋转和平移写在一个矩阵里, 使得整个关系变成线性关系。 该式中,<span style="color:red"> 矩阵 T</span>span>称为变换矩阵
-
+在一个三维向量的末尾添加 1, 将其变成了四维向量, 称为齐次坐 标。对于这个四维向量, 我们可以把旋转和平移写在一个矩阵里, 使得整个关系变成线性关系。 该式中,<span style="color:red"> 矩阵 T</span>称为变换矩阵
+$$
+\tilde{b} = T_1 \tilde{a}, \quad \tilde{c} = T_2 \tilde{b} \quad \Rightarrow \quad \tilde{c} = T_2 T_1 \tilde{a}（～齐次方程）
+$$
+b=Ta也可以默认齐次方程，关于变换矩阵 T {T} T , 它具有比较特别的结构: 左上角为旋转矩阵, 右侧为平移向量, 左下角为 0 向量, 右下角为 1。这种矩阵又称为特殊欧氏群 (Special Euclidean Group ):
 
