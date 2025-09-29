@@ -232,5 +232,23 @@ $$
 $$
 \tilde{b} = T_1 \tilde{a}, \quad \tilde{c} = T_2 \tilde{b} \quad \Rightarrow \quad \tilde{c} = T_2 T_1 \tilde{a}（～齐次方程）
 $$
-b=Ta也可以默认齐次方程，关于变换矩阵 T {T} T , 它具有比较特别的结构: 左上角为旋转矩阵, 右侧为平移向量, 左下角为 0 向量, 右下角为 1。这种矩阵又称为特殊欧氏群 (Special Euclidean Group ):
+**b=Ta**也可以默认齐次方程，关于变换矩阵 T , 它具有比较特别的结构: 左上角为旋转矩阵, 右侧为平移向量, 左下角为 0 向量, 右下角为 1。这种矩阵又称为特殊欧氏群 (Special Euclidean Group ):
+$$
+SE(3) = \left\{ T = \left[ \begin{array}{cc} R & t \\ 0^T & 1 \end{array} \right] \in \mathbb{R}^{4 \times 4} \mid R \in SO(3), t \in \mathbb{R}^3 \right\}
+$$
+与 SO(3) 一样, 求解该矩阵的逆表示一个反向的变换:
+$$
+T^{-1} = \left[ \begin{array}{cc} R^T & -R^T t \\ 0^T & 1 \end{array} \right]
+$$
+之所以平移变换多了一个-Rt
+$$
+假设有一个点 p，在经过刚体变换后变为 p′：
+p ′=Tp=Rp+t\;如果我们知道 p′而想要找到原始点 p,\\我们需要解出逆变换的公式\\
+先逆转平移：我们从 
+p′中减去平移向量 t,得到：p′−t\\
+再逆转旋转：因为旋转是一个线性变换，而 R是正交矩阵，其逆矩阵是 R^T\\
+p=R^T(p'−t),逆变换的平移部分应为 −R^Tt
+$$
+
+> ***T*12 这样的写法来表示从 2 到 1 的变换**
 
